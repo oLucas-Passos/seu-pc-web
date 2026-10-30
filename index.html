@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style><title>Seu PC Web</title>
+</head>
+<body>
+<meta name="description" content="Aprenda computador do zero: use um Windows simulado e monte um PC peça por peça em 3D.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/site.css">
+<link rel="stylesheet" href="css/windows.css">
+<link rel="stylesheet" href="css/builder.css">
+
+
+<!-- Cabeçalho com o menu -->
+<header class="topbar" id="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="#inicio" aria-label="Seu PC Web, página inicial">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="7" y="3" width="18" height="26" rx="2.5" fill="currentColor"/>
+        <rect x="10" y="7" width="12" height="2" rx="1" fill="var(--signal)"/>
+        <rect x="10" y="11" width="12" height="1.4" rx=".7" fill="var(--bg)" opacity=".55"/>
+        <rect x="10" y="14" width="12" height="1.4" rx=".7" fill="var(--bg)" opacity=".55"/>
+        <circle cx="16" cy="23" r="2.6" fill="none" stroke="var(--signal)" stroke-width="1.6"/>
+        <path d="M16 19.6v2.2" stroke="var(--signal)" stroke-width="1.6" stroke-linecap="round"/>
+      </svg>
+      <span class="brand-name">Seu PC <b>Web</b></span>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="mainNav">Menu</button>
+    <nav class="mainnav" id="mainNav" aria-label="Principal">
+      <a href="#inicio" data-route="inicio">Início</a>
+      <a href="#software" data-route="software simulador">Software</a>
+      <a href="#hardware" data-route="hardware">Hardware</a>
+      <a href="#montar" data-route="montar">Montar PC 3D</a>
+      <a href="#pecas" data-route="pecas">Peças</a>
+      <a href="#dicionario" data-route="dicionario">Dicionário</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Conteúdo principal. A página inicial já vem escrita aqui; as outras
+     páginas (Software, Hardware, Peças…) são montadas pelo JavaScript. -->
+<main id="app" tabindex="-1">
+  <div class="hm" id="pagina-inicio">
+    <section class="hm-hero">
+      <div class="hm-grid" aria-hidden="true"></div>
+      <div class="hm-hero-in">
+        <div class="hm-copy">
+          <p class="eyebrow hm-rise" style="--d: 0s;">Curso prático · gratuito · em português</p>
+          <h1 class="hm-rise" style="--d: .08s;">Do primeiro clique ao <em>PC montado</em>.</h1>
+          <p class="lead hm-rise" style="--d: .16s;">
+            Treine num Windows simulado, onde nada estraga, e monte um computador peça por peça em 3D. Sem termos difíceis, no seu ritmo.
+          </p>
+          <div class="hero-actions hm-rise" style="--d: .24s;">
+            <a class="btn btn-primary btn-lg" href="#software">
+              Começar agora
+              <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6"></path>
+              </svg>
+            </a>
+            <a class="btn btn-lg" href="#montar">Abrir a bancada 3D</a>
+          </div>
+          <div class="hm-stats hm-rise" style="--d: .32s;">
+            <div class="hm-stat"><b data-count="15">15</b><span>lições guiadas</span></div>
+            <div class="hm-stat"><b data-count="80">80+</b><span>peças reais no catálogo</span></div>
+            <div class="hm-stat"><b data-count="40">40+</b><span>jogos e programas testados</span></div>
+          </div>
+        </div>
+        <div class="hm-visual hm-rise" style="--d: .2s;">
+          <div class="hm-screen">
+            <div class="hm-bar"><i></i><i></i><i></i><span>simulador</span></div>
+            <div class="hm-desk">
+              <div class="hm-win">
+                <div class="hm-wt">Bloco de Notas</div>
+                <div class="hm-type">Minha primeira anotação</div>
+              </div>
+              <div class="hm-task"><i></i><i></i><i></i><i></i></div>
+            </div>
+          </div>
+          <div class="hm-tower">
+            <div class="hm-fan"></div>
+            <div class="hm-fan f2"></div>
+            <div class="hm-gpu"></div>
+            <div class="hm-led"></div>
+          </div>
+          <div class="hm-chip c1">✓ Lição 4 concluída</div>
+          <div class="hm-chip c2">Nota do PC: 87</div>
+        </div>
+      </div>
+    </section>
+    <section class="page hm-paths">
+      <div class="hm-sec-head">
+        <p class="eyebrow">Duas trilhas</p>
+        <h2>Escolha por onde começar</h2>
+      </div>
+      <div class="hm-cards">
+        <a class="hm-card" href="#software">
+          <span class="silk">J1 · Software</span>
+          <h3>Use o Windows</h3>
+          <p>
+            Mouse, janelas, pastas, internet, golpes, atalhos. Um professor ao lado mostra cada passo e confere se você acertou.
+          </p>
+          <div class="meter"><i data-meter="licoes" style="width: 3%;"></i></div>
+          <span class="hm-prog" data-prog="licoes">0/15 lições concluídas</span>
+          <span class="hm-go">
+            Entrar
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </span>
+        </a>
+        <a class="hm-card" href="#hardware">
+          <span class="silk">J2 · Hardware</span>
+          <h3>Monte seu PC</h3>
+          <p>
+            Encaixe processador, memória e placa de vídeo, aperte os parafusos, ligue os cabos e descubra quais jogos ele roda.
+          </p>
+          <div class="meter"><i data-meter="pcs" style="width: 3%;"></i></div>
+          <span class="hm-prog" data-prog="pcs">0 PC(s) salvo(s) · 0 peça(s) sua(s)</span>
+          <span class="hm-go">
+            Entrar
+            <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14M13 6l6 6-6 6"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+    <section class="page hm-how">
+      <div class="hm-sec-head">
+        <p class="eyebrow">Como funciona</p>
+        <h2>Aprender fazendo, sem medo de errar</h2>
+      </div>
+      <ol class="hm-steps">
+        <li><b>Veja</b><span>Cada lição explica o porquê com comparações do dia a dia.</span></li>
+        <li><b>Faça</b><span>Você mesmo clica, arrasta e digita no simulador ou na bancada.</span></li>
+        <li><b>Confira</b><span>O site percebe quando você acertou e passa para o próximo passo.</span></li>
+        <li><b>Teste</b><span>Monte um PC de verdade ou o do seu orçamento e veja o que ele roda.</span></li>
+      </ol>
+    </section>
+    <section class="page hm-cta">
+      <div class="hm-cta-box">
+        <h2>Pronto para ligar o computador?</h2>
+        <p>A primeira lição leva 2 minutos.</p>
+        <a class="btn btn-signal btn-lg" href="#software">
+          Fazer a primeira lição
+          <svg viewbox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M13 6l6 6-6 6"></path>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<noscript>
+  <p class="page">Este site precisa do JavaScript ativado para funcionar.</p>
+</noscript>
+
+<!-- Rodapé -->
+<footer class="footer" id="rodape">
+  <div class="footer-inner">
+    <span>Seu PC Web: aprenda computador do zero, no seu ritmo.</span>
+    <span class="mono">Simulações educativas. Preços e desempenho são estimativas.</span>
+  </div>
+</footer>
+
+<div id="toasts" class="toasts" aria-live="polite"></div>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"}}</script>
+<script type="module" src="js/main.js"></script>
+
+</body></html>
