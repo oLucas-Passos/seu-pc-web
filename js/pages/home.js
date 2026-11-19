@@ -22,23 +22,10 @@ export function mount(root) {
     const tick = (t) => { const p = Math.min(1, (t - t0) / 1200); b.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))) + (p >= 1 && n >= 40 ? '+' : ''); if (p < 1) requestAnimationFrame(tick); };
     requestAnimationFrame(tick);
   });
-  // parallax leve no visual (no máximo uma atualização por quadro)
   const hero = page.querySelector('.hm-hero');
-  const vis = page.querySelector('.hm-visual');
-  let frame = 0, px = 0, py = 0;
-  const apply = () => { frame = 0; vis.style.setProperty('--rx', (py * -6) + 'deg'); vis.style.setProperty('--ry', (px * 8) + 'deg'); };
-  hero.addEventListener('pointermove', (e) => {
-    if (e.pointerType !== 'mouse') return;
-    // mede a capa (que não gira), e não o desenho: medir o desenho enquanto ele
-    // gira muda a conta a cada quadro e faz o PC tremer
-    const r = hero.getBoundingClientRect();
-    px = (e.clientX - r.left) / r.width - .5; py = (e.clientY - r.top) / r.height - .5;
-    if (!frame) frame = requestAnimationFrame(apply);
-  });
-  hero.addEventListener('pointerleave', () => { px = py = 0; if (!frame) frame = requestAnimationFrame(apply); });
 
   // pausa as animações da capa quando ela sai da tela
   const io = new IntersectionObserver(([en]) => hero.classList.toggle('paused', !en.isIntersecting));
   io.observe(hero);
-  return () => { io.disconnect(); cancelAnimationFrame(frame); };
+  return () => io.disconnect();
 }

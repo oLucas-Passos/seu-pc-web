@@ -431,3 +431,8 @@ input[type="range"] { accent-color: var(--pcb); width: 100%; }
 .hm-cta-box p { color: #c9eadc; font-size: 18px; }
 @media (max-width: 900px) { .hm-hero-in { grid-template-columns: 1fr; padding-block: 40px; } .hm-visual { height: 320px; } }
 @media (prefers-reduced-motion: reduce) { .hm-rise { opacity: 1; transform: none; } }
+
+/* Desenho da página inicial parado: sem animações nem inclinação */
+.hm-visual, .hm-visual * { animation: none !important; transition: none !important; will-change: auto !important; }
+.hm-visual { transform: none !important; opacity: 1 !important; }
+.hm-type { width: auto; border-right: 0; }
