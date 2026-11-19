@@ -1,51 +1,13 @@
-# Seu PC Web
+vamos desenvolver um site para ensinar pessoas  sem conhecimento de TI a aprender sobre computadores, vamos separar em duas partes, software e hardware, no software as pessoas irão aprender a como manusear o windows, com todas as funções dele e simulações de uso. e no hardware vamos caprichar mais, tem q dar pra montar o pc em 3d, literalmente, e ai o desempenho do pc vai aumentando ou diminuindo conforme as peças adicionadas, ai vc coloca varias versões de cada peça e sua descrição, umas mais fortes, outras mais antigas e etc. e no final ele aponta quais aplicativos o seu pc q foi montado roda, e tem q dar pra criar peças personalizadas. porque ai a pessoa pode criar umas ultra fodas ou simplesmente colcoar as peças q tem em um pc que pretendem comprar. ai o calculo de qualidade do pc personalizado fica por sua conta. A modelagem 3d não precisa ter graficos muito precisos, mas precisam condizer com a realidade. e a pessoa seleciona a peça e ela mesmo encaixa, ai coloca os parafusos, tudo bonitinho. O nome do site vai ser Seu PC Web.
 
-Plataforma educativa para aprender informática do zero. Tem duas trilhas: um Windows simulado, onde a pessoa pratica sem medo de estragar nada, e uma bancada 3D para montar um computador peça por peça e descobrir quais jogos e programas ele roda.
+---
 
-**[Acessar o site](https://olucas-passos.github.io/seu-pc-web/)**
+faz uma abertura de site e inicio mais sofisticada
 
-![Página inicial do Seu PC Web](docs/preview.png)
+---
 
-## Funcionalidades
+agora faz slides ensinando a usar o site, bem simplificado pra qualquer um entender, faça a decoração o mais humana possivel
 
-**Trilha de software**
-- Windows simulado com área de trabalho, janelas, explorador de arquivos, navegador, Bloco de Notas, Paint, calculadora e configurações
-- 15 lições guiadas com um tutor que confere cada passo
-- Conteúdo sobre segurança na internet e golpes comuns
+---
 
-**Trilha de hardware**
-- Montagem de PC em 3D: encaixar processador, memória, placa de vídeo, parafusos e cabos
-- Catálogo com mais de 80 peças reais e verificação de compatibilidade (soquete, tipo de memória, tamanho do gabinete, potência da fonte)
-- Pontuação de desempenho e estimativa de FPS em mais de 40 jogos e programas
-- PCs prontos de exemplo e editor de peças personalizadas
-- Dicionário de termos técnicos explicados em linguagem simples
-
-## Tecnologias
-
-- HTML, CSS e JavaScript puro com ES Modules, sem frameworks
-- [Three.js](https://threejs.org/) para a bancada 3D
-- Roteamento por hash e progresso salvo no navegador (localStorage)
-- Layout responsivo para desktop e celular
-
-## Estrutura
-
-```
-css/        estilos do site, do Windows simulado e da bancada
-js/pages/   páginas do site (início, software, hardware, peças, dicionário)
-js/win/     Windows simulado: sistema de janelas, arquivos, aplicativos e lições
-js/hw/      bancada 3D: catálogo, modelos, montagem, pontuação e resultados
-```
-
-## Como executar
-
-```bash
-git clone https://github.com/oLucas-Passos/seu-pc-web.git
-cd seu-pc-web
-npx serve .
-```
-
-Depois acesse `http://localhost:3000`. Os ES Modules precisam de um servidor local; abrir o `index.html` direto pelo arquivo não funciona.
-
-## Autor
-
-Lucas Passos · [GitHub](https://github.com/oLucas-Passos)
+alem desse, faça um mais detalhado

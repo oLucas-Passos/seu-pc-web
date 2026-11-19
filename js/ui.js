@@ -85,11 +85,14 @@ export function modal({ title, body, actions = [], wide = false, onClose, closab
   const close = (value) => {
     backdrop.remove();
     document.removeEventListener('keydown', onKey);
+    window.removeEventListener('hashchange', onRoute);
     onClose && onClose(value);
     resolveFn(value);
     if (prevFocus && prevFocus.focus) try { prevFocus.focus(); } catch { /* ignorado */ }
   };
   const onKey = (e) => { if (e.key === 'Escape' && closable) close(undefined); };
+  // ao trocar de página, a janelinha aberta fecha junto
+  const onRoute = () => close(undefined);
 
   const foot = actions.length ? h('div', { class: 'modal-foot' }, actions.map(a => h('button', {
     class: 'btn ' + (a.kind ? 'btn-' + a.kind : ''),
@@ -114,6 +117,7 @@ export function modal({ title, body, actions = [], wide = false, onClose, closab
   const backdrop = h('div', { class: 'modal-backdrop', onmousedown: (e) => { if (e.target === backdrop && closable) close(undefined); } }, box);
   document.body.appendChild(backdrop);
   document.addEventListener('keydown', onKey);
+  window.addEventListener('hashchange', onRoute);
   const firstBtn = box.querySelector('.modal-foot .btn-primary, .modal-foot .btn, input, select, textarea');
   setTimeout(() => firstBtn && firstBtn.focus(), 30);
   return { close, el: box, body: box.querySelector('.modal-body'), result };

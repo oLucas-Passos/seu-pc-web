@@ -128,7 +128,12 @@ export function summaryText(a) {
   return lines.join('\n');
 }
 
+let resultsOpen = false;
+
 export function openResults(a, { name, onSave } = {}) {
+  // evita abrir a mesma janela duas vezes (ex.: ao ligar o PC e clicar no botão)
+  if (resultsOpen) return;
+  resultsOpen = true;
   let tab = 'resumo';
   let res = 1080;
   let filter = 'all';
@@ -257,6 +262,7 @@ export function openResults(a, { name, onSave } = {}) {
   renderContent();
   add(body, head, tabsEl, content);
   modal({
+    onClose: () => { resultsOpen = false; },
     title: 'O que este PC roda',
     wide: true,
     body,
