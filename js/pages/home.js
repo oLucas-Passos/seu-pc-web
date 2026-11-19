@@ -29,7 +29,9 @@ export function mount(root) {
   const apply = () => { frame = 0; vis.style.setProperty('--rx', (py * -6) + 'deg'); vis.style.setProperty('--ry', (px * 8) + 'deg'); };
   hero.addEventListener('pointermove', (e) => {
     if (e.pointerType !== 'mouse') return;
-    const r = vis.getBoundingClientRect();
+    // mede a capa (que não gira), e não o desenho: medir o desenho enquanto ele
+    // gira muda a conta a cada quadro e faz o PC tremer
+    const r = hero.getBoundingClientRect();
     px = (e.clientX - r.left) / r.width - .5; py = (e.clientY - r.top) / r.height - .5;
     if (!frame) frame = requestAnimationFrame(apply);
   });
